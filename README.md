@@ -37,11 +37,11 @@ Note-Mingle is an exciting and feature-rich note-taking application, representin
     ```
     npm install
     ```
-4. Start
+3. Start
 
-```
-npm start
-```
+    ```
+    npm start
+    ```
 
 
 ## Contributing
