@@ -20,7 +20,6 @@ function NotePage(){
     const finalRef = useRef(null)
 
     useEffect(() => {
-      alert("Warning! Refreshing the page will log you out!");
       dispatch(getNotes());
     }, []);
   
@@ -47,19 +46,6 @@ function NotePage(){
         });
       }
 
-      useEffect(() => {
-        // Check if the page is being reloaded using local storage
-        const isPageReloaded = localStorage.getItem('pageReloaded');
-    
-        // If it's a page reload, navigate to "/login" and reset the flag
-        if (isPageReloaded) {
-          navigate('/login');
-          localStorage.removeItem('pageReloaded');
-        } else {
-          // Set the flag to indicate a page reload for the next time
-          localStorage.setItem('pageReloaded', 'true');
-        }
-      }, [navigate]);
     
       
 
