@@ -5,9 +5,12 @@ import { store } from "../store"
 import { LOGOUT } from "../users/user.types"
 import { CREATE_NOTES_ERROR, CREATE_NOTES_LOADING, CREATE_NOTES_SUCCESS, DELETE_NOTES_ERROR, DELETE_NOTES_LOADING, DELETE_NOTES_SUCCESS, GET_NOTES_ERROR, GET_NOTES_LOADING, GET_NOTES_SUCCESS} from "./note.types"
 
+const getTokenFromStorage = () => {
+    return localStorage.getItem("token");
+  };
 
 export const getNotes=()=>async(dispatch)=>{
-    const {token} = store.getState().userReducer
+    const token = getTokenFromStorage();
 
     dispatch({type:GET_NOTES_LOADING})
     try {
